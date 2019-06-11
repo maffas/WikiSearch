@@ -1,0 +1,32 @@
+<div  *ngIf="searchName" class="body-conteiner">
+    <div class="body-header">
+        <label style="font-size:18px">Результаты по запросу: <strong>{{searchName}}</strong></label>
+        <hr style="width:100%">
+        <label style="font-size:15px; display: inline-block; margin-right: 15px;">Результатов:{{allResult}}</label>
+        <label style="font-size:15px; display: inline-block;"> страница {{currentPage}}: {{timeToResult}} (мс) </label>
+        <div *ngIf="allResult === 0 && !loading" >
+            <h2>Ничего не найдено :c</h2>
+        </div>
+    </div>
+    <div *ngIf="allResult !== 0" class="sort">
+        <div [ngClass]="{current:sort === '&srsort=last_edit_desc'}" (click) = "changeSort('edit_desc')">новые</div>
+        <div [ngClass]="{current:sort === '&srsort=last_edit_asc'}" (click) = "changeSort('edit_asc')">старые</div>
+        <!-- <div>Большего объема</div>
+        <div>Меньшего объема</div> -->
+    </div>
+    <div class="result">
+        <div style="top:10px" *ngIf="loading"> ...загрузка </div>
+        <div *ngFor="let item of result, let i = index" >
+            <h3 class="title" style="cursor:pointer; margin-bottom:5px"><a [href]="getUrl(i)" target="_blank">{{item.title}}</a></h3>
+            <a [href]="getUrl(i)" target="_blank">{{ getUrl(i)}}</a>
+            <br>
+            <!-- <p ng-bind-html="item.snippet"></p> -->
+            {{item.snippet}}...
+            <br>
+            <hr class="about-line">
+            <label style="font-size:15px; display: inline-block;"> слов в статье: {{item.wordcount}} </label>
+            <label style="font-size:15px; display: inline-block; margin-left: 15px"> последняя дата обновления: {{getCorrectDate(item.timestamp)}} </label>
+        </div>
+    </div>
+    <pagination *ngIf="searchName && allResult !== 0" (sendPage)='currentPage=$event; getAll()' [currentPage]='currentPage' [perPage]='perPage' [allResult]='allResult'></pagination>
+</div>

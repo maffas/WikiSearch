@@ -1,0 +1,12 @@
+.header
+{
+    width: 482px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 30px;
+
+}
+.header h1{
+    letter-spacing: 6px;
+    cursor: default;
+}

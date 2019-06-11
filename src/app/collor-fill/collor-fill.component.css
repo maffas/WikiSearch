@@ -1,0 +1,88 @@
+.theme
+{
+    width: 25px;
+    height: auto;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    transition: all 100ms ease-in;
+}
+.button
+{
+    border-radius: 30px;
+    position: fixed;
+    left: 45px;
+    bottom: 45px;
+    width: 50px;
+    height: 50px;
+}
+.button:hover
+{
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(122,122,122,0.5);
+}
+.theme-conteiner
+{
+    position: fixed;
+    width: auto;
+    /* width: 157px; */
+    left: 45px;
+    bottom: 115px;
+    height: 100px;
+    box-shadow: 0 0 5px rgba(122,122,122,0.5);
+    background-color: rgb(247, 247, 247);
+    padding:7px;
+    transition: visibility 1.5s linear 0.3s, opacity 0.3s linear 0s;
+    visibility: hidden;
+}
+.button:hover + .theme-conteiner
+{
+    visibility: visible;
+    z-index:9999;
+}
+.theme-conteiner:hover
+{
+    visibility: visible;
+}
+.block
+{
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    margin-right: 7px;
+    cursor: default;
+}
+.theme-conteiner  div:not([class = current])
+{
+    cursor: pointer;
+}
+.light
+{
+    background-color: rgb(228, 228, 228);
+    border: 0.5px solid black;
+}
+.dark
+{
+    background-color: rgb(35, 35, 35);
+}
+.ph
+{
+    background: linear-gradient(45deg, #000 49%, #f90 50%)
+}
+.currentArrow
+{
+    background-image: url(../../assets/check-symbol.svg);
+    background-size: 25px;
+    background-clip: content-box;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    margin-right: 7px;
+    cursor: default;
+}
+.dark .currentArrow, .ph .currentArrow
+{
+    filter: invert(100%);
+}

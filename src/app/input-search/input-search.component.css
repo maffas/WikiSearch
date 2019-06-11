@@ -1,0 +1,106 @@
+.Search-conteiner
+{
+    width: 482px;
+    height: 60px;
+    margin: 0 auto;
+    position: relative;
+}
+.Search
+{
+    display: inline-block;
+    position: absolute;
+    margin: 0 auto;
+    width: 450px;
+    height: 30px;
+    padding: 10px 15px;
+    border-radius: 17px;
+    font-size: 20px;
+    border: 1px solid rgb(140, 140, 140);  
+}
+*:focus
+{
+    outline: none;
+}
+.dropdown
+{
+    width: 480px;
+    border: 1px solid rgb(140, 140, 140);
+    display: block;
+    margin: 0 auto;
+    /* padding: 10px 15px; */
+    border-radius: 17px;
+    margin-top: 10px;
+    position: absolute;
+    top:50px;
+    z-index: 1000;
+    background-color: white;
+}
+.dropdown ul li
+{
+    padding: 5px 15px;
+    list-style-type: none;
+    height: 25px;
+    line-height: 25px;
+    font-size: 20px;
+    cursor: pointer; 
+    width: 450px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+.dropdown ul
+{
+    padding: 0px;
+}
+/* .dropdown ul li:hover
+{
+    background-color: rgb(230, 230, 230);
+} */
+.Search:focus + .dropdown
+{
+    display: block;
+}
+.select
+{
+    background-color: rgb(230, 230, 230);
+}
+.lupa
+{
+    cursor: pointer;
+    width: 52px;
+    height: auto;
+    transition: all 100ms ease-in;
+    position: absolute;
+    left: 105%;
+    display: inline-block;
+}
+.lupa:hover
+{
+    transition: all 100ms ease-in;
+    transform: rotate(45deg) 
+}
+.lupa:active
+{
+    transition: all 100ms ease-in;
+    transform: scale(0.7) 
+}
+.history
+{
+    position: absolute;
+    height: 30px;
+    width: 28%;
+    top: -41.5px;
+    left: 68.65%;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    border: 1px solid rgb(153, 153, 153);
+    border-radius: 7px;
+    padding: 2px 7px; 
+}
+.history:hover
+{
+    background-color: rgb(247, 247, 247);
+}

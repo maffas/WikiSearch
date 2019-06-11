@@ -1,0 +1,21 @@
+<div class="button">
+    <img class="theme" draggable="false" src='../../assets/paint-bucket.svg' alt="Выбор темы" name="lupa" title = "Выбор темы">
+</div>
+<div id="conteiner" class="theme-conteiner">
+    <div>
+        <h3 style="margin: 12px 5px; cursor: default" >Выберете тему</h3>
+        <div class="block light" (click)='cangeTheme("light")'>
+            <div [ngClass]="{currentArrow:theme === 'light'}">
+            </div>
+        </div>
+        <div class="block dark"  (click)='cangeTheme("dark")'>
+            <div [ngClass]="{currentArrow:theme === 'dark'}">
+            </div>
+        </div>
+        <div class="block ph"  (click)='cangeTheme("ph")'>
+            <div [ngClass]="{currentArrow:theme === 'ph'}">
+            </div>
+        </div>
+    </div>
+    <div>{{error}}</div>
+</div>

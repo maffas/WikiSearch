@@ -1,0 +1,11 @@
+<div class="pagination">
+    <div class="pagination-left" (click)="changePage(1)" *ngIf="rangeStart() !== 1"><a style="width:100%">В начало</a></div>
+    <div class="pagination-mid">
+        <ul>
+            <li *ngFor="let item of getPages()" (click)="changePage(item)" >
+                <a [ngClass]="{current:item === currentPage}"> {{item}} </a>
+            </li>
+        </ul>
+    </div>
+    <div class="pagination-right" (click)="changePage('right')" *ngIf="currentPage < totalPage()"><a style="width:100%">Следующая</a></div>
+</div>

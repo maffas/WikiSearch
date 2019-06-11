@@ -1,0 +1,14 @@
+<div class="Search-conteiner" >
+    <input id='Search' class="Search" type="text" placeholder="Искать в Википедии" [value]="value" (input)='ChangeRequest($event.target.value)' (keydown.arrowdown)='control($event, "down")'
+    (keydown.arrowup)='control($event, "up")' (keydown.enter)='control($event, "enter"); dropdownShow=false' autofocus autocomplete="off" (focus) = 'dropdownShow=true' (blur) = 'dropdownShow=false'>
+    <div class="history" (click)='show = true' >История запросов</div>
+    <div *ngIf="dropdownData.length !== 0 && dropdownShow" class="dropdown" (mousedown) = 'setFocus($event)'>
+        <ul>
+            <li [class]="changeClass(i)" *ngFor="let item of dropdownData, let i = index" (onfocus)='setFocus()' (mouseover)='curId=i' (click)="SelectInDrop(i)" >
+                {{item}}
+            </li>
+        </ul>
+    </div>
+    <img class="lupa" draggable="false" src='../../assets/lupa.svg' alt="начать поиска" name="lupa" title = "Поиск" (click)='send(value)'>
+    <modal *ngIf="show" (showEvent)='show=$event' [show]=show ></modal>
+</div>

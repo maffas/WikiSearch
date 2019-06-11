@@ -1,0 +1,11 @@
+
+<div class='modal'>
+    <h3 >История запросов:</h3>
+    <ul>
+        <li  *ngFor="let item of history" >
+            {{item.search}} <br> <span style="font-size:15px">результатов: {{item.totalResult}}</span>
+            <br> <span style="font-size:15px">{{getCorrectDate(item.date)}}</span>
+        </li>
+    </ul>
+</div>
+<div id='bg' class='bg' (click)='this.close($event)'></div>

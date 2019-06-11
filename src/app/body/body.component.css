@@ -1,0 +1,55 @@
+.body-conteiner 
+{
+    width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+.body-header
+{
+    position: relative;
+    margin: 15px auto;
+    width: 100%;
+}
+.result
+{
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.about-line
+{
+    border: 0.5px solid rgba(166, 166, 166, 0.2);
+    margin: 2px 0;
+}
+.title a
+{
+    text-decoration: none;
+    color: black;
+}
+.title:hover a{
+    text-decoration: underline;
+}
+.sort
+{
+    position: relative;
+}
+.sort div
+{
+    display: inline-block;
+    margin-right: 5px;
+    border: 1px solid rgb(153, 153, 153);
+    height: 34px;
+    text-align: center;
+    line-height: 34px;
+    padding: 0 12px;
+    border-radius: 15px 
+}
+.sort div:hover
+{
+    cursor: pointer;
+    background-color: rgb(247, 247, 247);
+}
+.current
+{
+    background-color: rgb(255, 255, 255);
+}
